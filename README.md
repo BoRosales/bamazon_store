@@ -3,11 +3,11 @@
 # This is a node application #
 
 This application was made using :
-Javascript
-Node.js
-MYSQL
-NPM Inquirer
-NPM cli-table
+1. Javascript
+2. Node.js
+3. MYSQL
+4. NPM Inquirer
+5. NPM cli-table
 
 ![image](https://user-images.githubusercontent.com/40649236/47599940-8416e600-d97e-11e8-93fd-0ae1890a803d.png)
 
