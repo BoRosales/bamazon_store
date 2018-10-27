@@ -67,7 +67,7 @@ function start() {
           }
         },
         {
-          name: "quanitity",
+          name: "quantity",
           type: "input",
           message: "How many would you like to purchase?",
           validate: function(val) {
@@ -85,8 +85,9 @@ function start() {
         let quantity = choices.quantity;
         connection.query("SELECT * FROM products WHERE ?", { item_id: itemId }, function(err, results) {
             if (err) throw err;
-            console.log(choices);
-            console.log(results);
+            // console.log(choices);
+            // console.log(results);
+            // console.log(quantity);
             if (results[0].stock_quantity >= quantity) {
               connection.query("UPDATE products SET ? WHERE ?",
                 [
@@ -98,11 +99,13 @@ function start() {
                 ],
                 function(err) {
                   if (err) throw err;
-                  console.log(`Your order was successful. Thank you for purchasing ${choiceArray}`);
+                  let totalCost = results[0].price * quantity;
+                  console.log('Your order was successful!');
+                  console.log('The total cost of your order is: $' + totalCost);
                 }
               );
             } else {
-              console.log("Insufficient Quantity!");
+              console.log("Insufficient quantity!");
             }
             connection.end();
           }
