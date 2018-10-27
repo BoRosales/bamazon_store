@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/BoRosales/bamazon_store#readme",
   "dependencies": {
+    "cli-table": "^0.3.1",
+    "cli-table3": "^0.5.1",
     "inquirer": "^6.2.0",
     "mysql": "^2.16.0"
   }
